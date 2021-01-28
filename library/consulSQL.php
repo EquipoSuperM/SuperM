@@ -2,7 +2,8 @@
 /* Clase para ejecutar las consultas a la Base de Datos*/
 class ejecutarSQL {
     public static function conectar(){
-        if(!$con=  mysql_connect(SERVER,USER,PASS)){
+        $con=  mysqli_connect(SERVER,USER,PASS)
+        if(!$con){
             die("Error en el servidor, verifique sus datos");
         }
         if (!mysql_select_db(BD)) {
